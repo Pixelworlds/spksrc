@@ -20,7 +20,7 @@ EXTRACT_CMD.zip = unzip $(DIST_FILE) -d $(EXTRACT_PATH)
 endif
 
 ifeq ($(strip $(EXTRACT_CMD)),)
-EXTRACT_CMD = $(EXTRACT_CMD.$(DIST_EXT)) 
+EXTRACT_CMD = $(EXTRACT_CMD.$(DIST_EXT))
 endif
 
 EXTRACT_COOKIE = $(WORK_DIR)/.$(COOKIE_PREFIX)extract_done
@@ -53,7 +53,7 @@ extract_target: $(PRE_EXTRACT_TARGET)
 	@mkdir -p $(EXTRACT_PATH)
 	$(EXTRACT_CMD)
 
-post_extract_target: $(EXTRACT_TARGET) 
+post_extract_target: $(EXTRACT_TARGET)
 
 ifeq ($(wildcard $(EXTRACT_COOKIE)),)
 extract: $(EXTRACT_COOKIE)

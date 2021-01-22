@@ -2,8 +2,7 @@
 AVAILABLE_TCS = $(notdir $(wildcard toolchain/syno-*))
 AVAILABLE_ARCHS = $(notdir $(subst syno-,/,$(AVAILABLE_TCS)))
 SUPPORTED_SPKS = $(sort $(patsubst spk/%/Makefile,%,$(wildcard spk/*/Makefile)))
-
-
+ 
 all: $(SUPPORTED_SPKS)
 
 all-noarch:
@@ -150,7 +149,7 @@ toolchain-%:
 kernel-%:
 	-@cd kernel/syno-$*/ && MAKEFLAGS= $(MAKE)
 
-setup: local.mk dsm-6.1
+setup: local.mk dsm-7.0
 
 local.mk:
 	@echo "Creating local configuration \"local.mk\"..."

@@ -71,7 +71,7 @@ kernel_extract_target:
 	tar -xpf $(DIST_FILE) -C $(EXTRACT_PATH) $(PKG_EXTRACT)
 	mv $(EXTRACT_PATH)/$(PKG_EXTRACT) $(KERNEL_DIR)
 
-kernel_configure_target: 
+kernel_configure_target:
 	@$(MSG) "Configuring depended kernel source"
 	cp $(KERNEL_DIR)/$(SYNO_CONFIG) $(KERNEL_DIR)/.config
 	# Update the Makefile
