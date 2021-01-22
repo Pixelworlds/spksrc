@@ -1,0 +1,8 @@
+docker run --rm -it \
+	--name spksrc \
+	--privileged \
+	--user nobody \
+	-v /Users/rstovall/Development/synology/spksrc:/spksrc pixelworlds/spksrc \
+	/bin/bash
+
+docker build -t pixelworlds/spksrc .
